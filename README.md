@@ -10,6 +10,6 @@ Füge die einzelnen Humidore manuell in deiner `configuration.yaml` hinzu:
 
 ```yaml
 sensor:
-	- platform: zigarren_db_statistik
+    - platform: zigarren_db_statistik
 ```
 
