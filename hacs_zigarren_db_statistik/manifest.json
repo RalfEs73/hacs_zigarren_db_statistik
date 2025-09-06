@@ -1,0 +1,9 @@
+{
+  "domain": "zigarren_db_statistik",
+  "name": "Zigarren Datenbank Statistik",
+  "documentation": "https://github.com/RalfEs73/hacs_zigarren_db_statistik",
+  "dependencies": [],
+  "codeowners": ["@RalfEs73"],
+  "requirements": [],
+  "version": "0.0.1"
+}
