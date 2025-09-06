@@ -38,3 +38,7 @@ class ZigarrenDBSensor(Entity):
     @property
     def extra_state_attributes(self):
         return self._attributes
+
+    @property
+    def icon(self):
+        return "mdi:cigar"
