@@ -4,23 +4,26 @@ from homeassistant.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 
-API_URL = "https://zigarren-db.de/api/ha_statistik_test.php"
+BASE_URL = "https://zigarren-db.de/api/ha_statistik_test2.php"
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Setzt die Plattform für den Zigarren DB Sensor."""
-    add_entities([ZigarrenDBSensor()], True)
+    api_param = config.get("api", "")
+    full_url = f"{BASE_URL}?api={api_param}" if api_param else BASE_URL
+    add_entities([ZigarrenDBSensor(full_url)], True)
 
 class ZigarrenDBSensor(Entity):
     """Repräsentiert den Zigarren DB Statistik Sensor."""
 
-    def __init__(self):
+    def __init__(self, api_url):
+        self._api_url = api_url
         self._state = None
         self._attributes = {}
 
     def update(self):
         """Aktualisiert die Sensordaten durch Abruf der API."""
         try:
-            response = requests.get(API_URL, timeout=10)
+            response = requests.get(self._api_url, timeout=10)
             data = response.json()
             self._state = data.get("auf_lager")
             self._attributes = {k: v for k, v in data.items() if k != "auf_lager"}
