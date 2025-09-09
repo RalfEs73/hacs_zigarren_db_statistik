@@ -4,7 +4,7 @@ from homeassistant.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 
-BASE_URL = "https://zigarren-db.de/api/ha_statistik_test2.php"
+BASE_URL = "https://zigarren-db.de/api/ha_statistik.php"
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Setzt die Plattform für den Zigarren DB Sensor."""
