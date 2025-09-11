@@ -2,10 +2,8 @@
   "domain": "zigarren_db_statistik",
   "name": "Zigarren Datenbank Statistik",
   "documentation": "https://github.com/RalfEs73/hacs_zigarren_db_statistik",
-  "issue_tracker": "https://github.com/RalfEs73/hacs_zigarren_db_statistik/issues",
-  "logo": "custom_components/zigarren_db_statistik/images/logo.png",
   "dependencies": [],
   "codeowners": ["@RalfEs73"],
   "requirements": [],
-  "version": "1.0.1"
+  "version": "1.0.0"
 }
