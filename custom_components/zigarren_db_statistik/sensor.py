@@ -23,7 +23,7 @@ class ZigarrenDBSensor(Entity):
     def update(self):
         """Aktualisiert die Sensordaten durch Abruf der API."""
         try:
-            response = requests.get(self._api_url, timeout=10)
+            response = requests.get(self._api_url, timeout=120)
             data = response.json()
             self._state = data.get("auf_lager")
             self._attributes = {k: v for k, v in data.items() if k != "auf_lager"}
